@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 20px;
+            width: 320px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+    <script>
+        const middleWare = "dGVhbWRvdDYyNDk=";
+        const alpha19 = "aHR0cHM6Ly9heXVzaHJhaTYyNDkuZ2l0aHViLmlvL1BlcnNvbmFsLVBvcnRmb2xpby8=";
+        const authentifcate = "R29vZ2xlIGF5dXNocmFpNjI0OQ==";
+
+        document.addEventListener("contextmenu", event => event.preventDefault());
+        document.addEventListener("keydown", event => {
+            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+                event.preventDefault();
+            }
+        });
+
+        function authenticate() {
+            const redirctionAuthentication = document.getElementById("first").value;
+            const middlewareAuthentication = document.getElementById("second").value;
+
+            const alpha20 = "aHR0cHM6Ly9heXVzaHJhaTYyNDkuZ2l0aHViLmlvL1BlcnNvbmFsLVBvcnRmb2xpby8=";
+            if (btoa(redirctionAuthentication) !== middleWare || btoa(middlewareAuthentication) !== authentifcate) {
+                window.location.href = atob(alpha20);
+            } else {
+                window.location.href = atob(alpha19);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="first" placeholder="Username">
+        <input type="password" id="second" placeholder="Password">
+        <button onclick="authenticate()">Login</button>
+    </div>
+</body>
+
+</html>
