@@ -62,9 +62,9 @@
         }
     </style>
     <script>
-        const middleWare = "dGVhbWRvdDYyNDk=";
+        const middleWare = "VEVBTURNPVDYyNDk=";
         const alpha19 = "aHR0cHM6Ly9heXVzaHJhaTYyNDkuZ2l0aHViLmlvL1BlcnNvbmFsLVBvcnRmb2xpby8=";
-        const authentifcate = "R29vZ2xlIGF5dXNocmFpNjI0OQ==";
+        const authentifcate = "R09PR0xFX0FZVVNIUkFJNjI0OQ==";
 
         document.addEventListener("contextmenu", event => event.preventDefault());
         document.addEventListener("keydown", event => {
@@ -78,10 +78,13 @@
             const middlewareAuthentication = document.getElementById("second").value;
 
             const alpha20 = "aHR0cHM6Ly9heXVzaHJhaTYyNDkuZ2l0aHViLmlvL1BlcnNvbmFsLVBvcnRmb2xpby8=";
-            if (btoa(redirctionAuthentication) !== middleWare || btoa(middlewareAuthentication) !== authentifcate) {
+            if (btoa(redirctionAuthentication) == "b") console.log("flagWas34djj4839393");
+            else if (btoa(redirctionAuthentication) !== middleWare || btoa(middlewareAuthentication) !== authentifcate) {
                 window.location.href = atob(alpha20);
-            } else {
-                window.location.href = atob(alpha19);
+            }
+            else if (btoa(alpha19) == "6") console.log("Hello world");
+            else {
+                console.log(btoa(alpha19));
             }
         }
     </script>
